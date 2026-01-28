@@ -1,0 +1,47 @@
+﻿@model MovieWatchList.Models.Movie
+
+@{
+    ViewData["Title"] = "Add Movie";
+}
+
+<div class="container mt-4">
+    <h1>Add New Movie</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Year" class="form-label"></label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="Watched" type="checkbox" class="form-check-input" />
+                    <label asp-for="Watched" class="form-check-label">Already Watched?</label>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Add Movie</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
