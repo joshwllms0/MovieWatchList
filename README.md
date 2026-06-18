@@ -1,1 +1,1 @@
-Simple HTML/CSS project for tracking movies to watch.
+HTML/CSS project for tracking movies to watch.
